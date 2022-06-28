@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Get_Weather_Info</name>
         <label>Get Weather Info</label>
-        <locationX>176</locationX>
-        <locationY>518</locationY>
+        <locationX>314</locationX>
+        <locationY>638</locationY>
         <actionName>OSF_WeatherReader</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -42,7 +42,7 @@
     <assignments>
         <name>Assign_Shipping_Address</name>
         <label>Assign Shipping Address</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>398</locationY>
         <assignmentItems>
             <assignToReference>Get_Account.ShippingCity</assignToReference>
@@ -80,9 +80,34 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Get_Weather_Info</targetReference>
+            <targetReference>Billing_city_is_NULL</targetReference>
         </connector>
     </assignments>
+    <decisions>
+        <name>Billing_city_is_NULL</name>
+        <label>Billing city is NULL?</label>
+        <locationX>182</locationX>
+        <locationY>518</locationY>
+        <defaultConnector>
+            <targetReference>Get_Weather_Info</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Billing_city_null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Account.BillingCity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Billing_city_Null_Scearn</targetReference>
+            </connector>
+            <label>Billing city null</label>
+        </rules>
+    </decisions>
     <interviewLabel>Update Account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Account</label>
     <processMetadataValues>
@@ -107,7 +132,7 @@
     <recordLookups>
         <name>Get_Account</name>
         <label>Get Account</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>158</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -128,14 +153,43 @@
     <recordUpdates>
         <name>Update_Account_Shipping_Address_and_Weather_Info</name>
         <label>Update Account Shipping Address and Weather Info</label>
-        <locationX>176</locationX>
-        <locationY>638</locationY>
+        <locationX>314</locationX>
+        <locationY>758</locationY>
+        <connector>
+            <targetReference>Weather_Info_Screen_0</targetReference>
+        </connector>
+        <inputReference>Get_Account</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Shipping_Address</name>
+        <label>Update Shipping Address</label>
+        <locationX>50</locationX>
+        <locationY>758</locationY>
         <inputReference>Get_Account</inputReference>
     </recordUpdates>
     <screens>
+        <name>Billing_city_Null_Scearn</name>
+        <label>Billing city Null Scearn</label>
+        <locationX>50</locationX>
+        <locationY>638</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Update_Shipping_Address</targetReference>
+        </connector>
+        <fields>
+            <name>Billing_City_Null_Text</name>
+            <fieldText>&lt;p&gt;The &lt;strong style=&quot;color: rgb(228, 9, 9);&quot;&gt;Billing City IS NULL&lt;/strong&gt;. Only the Shipping Address will be saved.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Enter_Shipping_Address</name>
         <label>Enter Shipping Address</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>278</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -196,8 +250,24 @@
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
+    <screens>
+        <name>Weather_Info_Screen_0</name>
+        <label>Weather Info Screen</label>
+        <locationX>314</locationX>
+        <locationY>878</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Retrieved_Weather_Info_0</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Weather info f&lt;/span&gt;or {!Get_Account.BillingCity}:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Description: {!Get_Account.Description}&lt;/li&gt;&lt;li&gt;Temperature: {!Get_Account.Temperature__c}&lt;/li&gt;&lt;li&gt;Feal like {!Get_Account.Real_Feeling__c}&lt;/li&gt;&lt;li&gt;Humidity: {!Get_Account.Humidity__c}&lt;/li&gt;&lt;/ul&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Account</targetReference>
@@ -213,7 +283,7 @@
     </variables>
     <variables>
         <name>WeatherResult</name>
-        <apexClass>01p7R000008TFlb__NotFound</apexClass>
+        <apexClass>OSF_WeatherReaderResult</apexClass>
         <dataType>Apex</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

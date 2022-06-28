@@ -1,3 +1,15 @@
+/**********************************************************************
+ * @Name         : OSF_WeatherReader
+ * @Description  : Class to invoke openweathermap API in order to get the weather of the account city.
+ *
+ * @Created By   : Marta Demeny
+ * @Created Date : 18 jun. 2022
+ * @Modification Log: 
+ ********************************************************************
+ * Version		Developer		Date			Description
+ *___________________________________________________________________
+ *
+ *********************************************************************/
 public with sharing class OSF_WeatherReader {
     private static final String WEATHER_URL = 'https://api.openweathermap.org/data/2.5/weather';
     private static final String WEATHER_IMG_URL = 'https://openweathermap.org/img/wn/';
@@ -5,6 +17,16 @@ public with sharing class OSF_WeatherReader {
 
     public static OSF_WeatherCalloutMock mock = null;
 
+/**********************************************************************
+ * @Name         : getWeatherInfo
+ * @Description  : Returns the weather info 
+ *
+ * @Created By   : Marta Demeny
+ * @Created Date : 11 jun. 2022
+ *
+ * @param List<String> - string containing  the BillingCity
+ * @return List<OSF_WeatherReaderResult> - list of result object
+ *********************************************************************/
     @InvocableMethod(callout=true label='Get Account Weather Info')
     public static List<OSF_WeatherReaderResult> getWeatherInfo(List<String> accountBillingCity) {
         OSF_WeatherWrapper weatherWrapper = executeAPICall(accountBillingCity[0]);
@@ -25,6 +47,17 @@ public with sharing class OSF_WeatherReader {
         return new List<OSF_WeatherReaderResult>{result};
     }
 
+
+/**********************************************************************
+ * @Name         : getWeatherInfo
+ * @Description  : Use Rest API to get the weather information for a given City.
+ *
+ * @Created By   : Marta Demeny
+ * @Created Date : 11 jun. 2022
+ *
+ * @param String - containing the city
+ * @return OSF_WeatherReaderResult - result object with weather info
+ *********************************************************************/
     public static OSF_WeatherWrapper executeAPICall(String accountBillingCity) {
         Http http = new Http();
         HttpRequest request = new HttpRequest();

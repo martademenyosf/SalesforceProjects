@@ -1,3 +1,14 @@
+/**********************************************************************
+ * @Name         : OSF_UpdateWeatherInfoForAccountsTest
+ * @Description  : Test class for OSF_UpdateWeatherInfoForAccounts
+ * @Created By   : Marta Demeny
+ * @Created Date : 17 jun. 2022
+ * @Modification Log: 
+ ********************************************************************
+ * Version        Developer        Date            Description
+ *___________________________________________________________________
+ *
+ *********************************************************************/
 @isTest
 public with sharing class OSF_UpdateWeatherInfoForAccountsTest {
         //cronmaker.com: CRON_EXP = sec minutes hour DayOfMonth Month DayOfWeek op Year
@@ -5,12 +16,25 @@ public with sharing class OSF_UpdateWeatherInfoForAccountsTest {
     private final static String CRON_WEEK = '0 0 13 ? * 6'; //  once a week (Friday at 1:00 PM)
     private final static String CRON_MONTH = '0 0 18 ? 1/1 6L'; // once a month(Last Friday of the Month at 6:00 PM)
     
+/**********************************************************************
+ * @Name         : setup
+ * @Description  : Helper method to create the testing data.
+ * @Created By   : Marta Demeny
+ * @Created Date : 17 jun. 2022
+ *
+ *********************************************************************/ 
     @testSetup 
     private static void setup() {
         List<Account> accountsList = new List<Account>{new Account(Name = 'Test weather', BillingCity='London')};
         insert accountsList;
     }
-
+/**********************************************************************
+ * @Name         : testDailyScheduler
+ * @Description  : Test method for daily scheduler.
+ * @Created By   : Marta Demeny
+ * @Created Date : 17 jun. 2022
+ *
+ *********************************************************************/
     @isTest
     private static void testDailyScheduler() {
         String jobId;
