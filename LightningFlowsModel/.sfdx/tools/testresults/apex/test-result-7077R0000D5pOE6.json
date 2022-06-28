@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "outcome": "Passed",
+    "testsRan": 1,
+    "passing": 1,
+    "failing": 0,
+    "skipped": 0,
+    "passRate": "100%",
+    "failRate": "0%",
+    "skipRate": "0%",
+    "testStartTime": "Mon Jun 27 2022 9:02:32 PM",
+    "testExecutionTimeInMs": 2413,
+    "testTotalTimeInMs": 2413,
+    "commandTimeInMs": 198,
+    "hostname": "https://osfdigital-45d-dev-ed.my.salesforce.com",
+    "orgId": "00D7R000000u8WjUAI",
+    "username": "marta.demeny@osf.digital",
+    "testRunId": "7077R0000D5pOE6",
+    "userId": "0057R00000CQYqhQAH"
+  },
+  "tests": [
+    {
+      "id": "07M7R000006kQMsUAM",
+      "queueItemId": "7097R0000003KXbQAM",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7077R0000D5pOE6QQM",
+      "methodName": "testDailyScheduler",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p7R000008TJNQQA4",
+        "name": "OSF_UpdateWeatherInfoForAccountsTest",
+        "namespacePrefix": null,
+        "fullName": "OSF_UpdateWeatherInfoForAccountsTest"
+      },
+      "runTime": 2413,
+      "testTimestamp": "2022-06-27T18:02:32.000+0000",
+      "fullName": "OSF_UpdateWeatherInfoForAccountsTest.testDailyScheduler"
+    }
+  ]
+}

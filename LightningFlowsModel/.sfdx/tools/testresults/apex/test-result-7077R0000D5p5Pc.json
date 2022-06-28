@@ -1,0 +1,47 @@
+{
+  "summary": {
+    "outcome": "Skipped",
+    "testsRan": 1,
+    "passing": 0,
+    "failing": 0,
+    "skipped": 1,
+    "passRate": "0%",
+    "failRate": "0%",
+    "skipRate": "100%",
+    "testStartTime": "Mon Jun 27 2022 7:53:03 PM",
+    "testExecutionTimeInMs": 0,
+    "testTotalTimeInMs": 0,
+    "commandTimeInMs": 542,
+    "hostname": "https://osfdigital-45d-dev-ed.my.salesforce.com",
+    "orgId": "00D7R000000u8WjUAI",
+    "username": "marta.demeny@osf.digital",
+    "testRunId": "7077R0000D5p5Pc",
+    "userId": "0057R00000CQYqhQAH"
+  },
+  "tests": [
+    {
+      "id": "07M7R000006kQLVUA2",
+      "queueItemId": "7097R0000003KWYQA2",
+      "stackTrace": null,
+      "message": "Method testWeather does not exist in the the apex class with Id :01p7R000008TImD",
+      "asyncApexJobId": "7077R0000D5p5PcQQI",
+      "methodName": "testWeather",
+      "outcome": "Skip",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p7R000008TImDQAW",
+        "name": "OSF_WeatherReaderTest",
+        "namespacePrefix": null,
+        "fullName": "OSF_WeatherReaderTest"
+      },
+      "runTime": 0,
+      "testTimestamp": "2022-06-27T16:53:04.000+0000",
+      "fullName": "OSF_WeatherReaderTest.testWeather",
+      "diagnostic": {
+        "exceptionMessage": "Method testWeather does not exist in the the apex class with Id :01p7R000008TImD",
+        "exceptionStackTrace": null,
+        "compileProblem": ""
+      }
+    }
+  ]
+}

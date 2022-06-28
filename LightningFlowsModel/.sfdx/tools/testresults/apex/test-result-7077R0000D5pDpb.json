@@ -1,0 +1,50 @@
+{
+  "summary": {
+    "outcome": "Failed",
+    "testsRan": 1,
+    "passing": 0,
+    "failing": 1,
+    "skipped": 0,
+    "passRate": "0%",
+    "failRate": "100%",
+    "skipRate": "0%",
+    "testStartTime": "Mon Jun 27 2022 8:10:11 PM",
+    "testExecutionTimeInMs": 31,
+    "testTotalTimeInMs": 31,
+    "commandTimeInMs": 197,
+    "hostname": "https://osfdigital-45d-dev-ed.my.salesforce.com",
+    "orgId": "00D7R000000u8WjUAI",
+    "username": "marta.demeny@osf.digital",
+    "testRunId": "7077R0000D5pDpb",
+    "userId": "0057R00000CQYqhQAH"
+  },
+  "tests": [
+    {
+      "id": "07M7R000006kQMJUA2",
+      "queueItemId": "7097R0000003KXCQA2",
+      "stackTrace": "Class.OSF_WeatherReaderTest.testWeather: line 20, column 1",
+      "message": "System.AssertException: Assertion Failed: Expected: light intensity drizzle, Actual: mist",
+      "asyncApexJobId": "7077R0000D5pDpbQQE",
+      "methodName": "testWeather",
+      "outcome": "Fail",
+      "apexLogId": "07L7R00004rS5pRUAS",
+      "apexClass": {
+        "id": "01p7R000008TImDQAW",
+        "name": "OSF_WeatherReaderTest",
+        "namespacePrefix": null,
+        "fullName": "OSF_WeatherReaderTest"
+      },
+      "runTime": 31,
+      "testTimestamp": "2022-06-27T17:10:12.000+0000",
+      "fullName": "OSF_WeatherReaderTest.testWeather",
+      "diagnostic": {
+        "exceptionMessage": "System.AssertException: Assertion Failed: Expected: light intensity drizzle, Actual: mist",
+        "exceptionStackTrace": "Class.OSF_WeatherReaderTest.testWeather: line 20, column 1",
+        "className": "OSF_WeatherReaderTest",
+        "compileProblem": "",
+        "lineNumber": 20,
+        "columnNumber": 1
+      }
+    }
+  ]
+}
