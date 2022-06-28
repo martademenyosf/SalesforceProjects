@@ -1,0 +1,16 @@
+{
+  "status": 0,
+  "result": {
+    "createdById": "0057R00000CQYqhQAH",
+    "createdByName": "Marta Demeny",
+    "createdDate": "2022-06-27T12:48:59.000Z",
+    "fileName": "flows/Update_Account.flow",
+    "fullName": "Update_Account",
+    "id": "3017R000000Uy4FQAS",
+    "lastModifiedById": "0057R00000CQYqhQAH",
+    "lastModifiedByName": "Marta Demeny",
+    "lastModifiedDate": "2022-06-27T12:57:09.000Z",
+    "manageableState": "unmanaged",
+    "type": "Flow"
+  }
+}

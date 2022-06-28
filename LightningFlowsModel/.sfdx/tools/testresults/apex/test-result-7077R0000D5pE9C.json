@@ -1,0 +1,42 @@
+{
+  "summary": {
+    "outcome": "Passed",
+    "testsRan": 1,
+    "passing": 1,
+    "failing": 0,
+    "skipped": 0,
+    "passRate": "100%",
+    "failRate": "0%",
+    "skipRate": "0%",
+    "testStartTime": "Mon Jun 27 2022 8:10:56 PM",
+    "testExecutionTimeInMs": 72,
+    "testTotalTimeInMs": 72,
+    "commandTimeInMs": 203,
+    "hostname": "https://osfdigital-45d-dev-ed.my.salesforce.com",
+    "orgId": "00D7R000000u8WjUAI",
+    "username": "marta.demeny@osf.digital",
+    "testRunId": "7077R0000D5pE9C",
+    "userId": "0057R00000CQYqhQAH"
+  },
+  "tests": [
+    {
+      "id": "07M7R000006kQMOUA2",
+      "queueItemId": "7097R0000003KXHQA2",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7077R0000D5pE9CQQU",
+      "methodName": "testWeather",
+      "outcome": "Pass",
+      "apexLogId": "07L7R00004rS5pbUAC",
+      "apexClass": {
+        "id": "01p7R000008TImDQAW",
+        "name": "OSF_WeatherReaderTest",
+        "namespacePrefix": null,
+        "fullName": "OSF_WeatherReaderTest"
+      },
+      "runTime": 72,
+      "testTimestamp": "2022-06-27T17:10:57.000+0000",
+      "fullName": "OSF_WeatherReaderTest.testWeather"
+    }
+  ]
+}
