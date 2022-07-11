@@ -16,3 +16,4 @@ LightningFlowsModel/README.md
 *.apex
 LightningFlowsModel/scripts/soql/account.soql
 LightningFlowsModel/force-app/main/default/lwc/.eslintrc.json
+LightningFlowsModel/package-lock.json
