@@ -21,7 +21,7 @@
  *********************************************************************/ 
     @testSetup 
     private static void setup() {
-        Profile pf= [Select Id from profile where Name='System Administrator']; 
+        Profile pf = [Select Id from profile where Name='System Administrator']; 
       
         User caseOwner = createTestempUser(pf.Id, 'Test', 'User');
 
@@ -44,7 +44,7 @@
      * @return User - User object containing the created user
      *
      *********************************************************************/
-    public static User createTestempUser(Id profilId, String fName, String lName) {  
+    public static User createTestTempUser(Id profilId, String fName, String lName) {  
   
         String orgId = UserInfo.getOrganizationId();  
         String dateString =   

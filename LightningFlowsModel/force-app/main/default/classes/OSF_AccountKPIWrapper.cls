@@ -12,20 +12,20 @@
 
 public with sharing class OSF_AccountKPIWrapper {
     @AuraEnabled
-    public Integer openCasesCount;
+    public Integer openCasesCount {get; set;}
 
     @AuraEnabled
-    public Integer casesCount;
+    public Integer casesCount {get; set;}
 
     @AuraEnabled
-    public Date customerSince;
+    public Date customerSince {get; set;}
 
     @AuraEnabled
-    public Integer ordersCount;
+    public Integer ordersCount {get; set;}
 
     @AuraEnabled
-    public Date birthDay;
+    public Date birthDay {get; set;}
 
     @AuraEnabled
-    public Integer avarageOrderValue;
+    public Integer avarageOrderValue {get; set;}
 }

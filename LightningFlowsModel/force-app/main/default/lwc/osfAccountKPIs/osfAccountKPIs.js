@@ -1,6 +1,6 @@
 import { LightningElement, api, wire, track } from 'lwc';
-import { getRecord, getFieldValue } from 'lightning/uiRecordApi'; 
-import CREATEDDATE_FIELD from '@salesforce/schema/Account.CreatedDate';
+//import { getRecord, getFieldValue } from 'lightning/uiRecordApi'; 
+//import CREATEDDATE_FIELD from '@salesforce/schema/Account.CreatedDate';
 import getOrdersAmountCurrentYear from '@salesforce/apex/OSF_AccountController.getOrdersAmountCurrentYear';
 import getOrdersAmountCurrentYearMinus5 from '@salesforce/apex/OSF_AccountController.getOrdersAmountCurrentYearMinus5';
 import getAccountKPIs from '@salesforce/apex/OSF_AccountController.getAccountKPIs';
@@ -12,7 +12,7 @@ export default class OsfAccountKPIs extends LightningElement {
     @track casesCount;
     @track accountKPIs;
     error;
-
+/*
     @wire(getRecord, { recordId: '$recordId', fields: [CREATEDDATE_FIELD] })
     account;
       
@@ -20,6 +20,7 @@ export default class OsfAccountKPIs extends LightningElement {
         const crDate = getFieldValue(this.account.data, CREATEDDATE_FIELD);
         return crDate;
     }
+*/
 
     @wire(getOrdersAmountCurrentYear, { accountId: '$recordId' })
     wiredOrdersAmountCurrentYear({ error, data }) {
